@@ -40,3 +40,20 @@ console.log(str3);                 即ES6模板字符串。还是使用反单引
 数组 可以包含任何数据类型，并通过索引来访问元素要取得数组的长度，访问数组的属性length.可以直接给length赋值，改变数组的大小。避免直接修改数组的大小。访问索引时避免越界
 
 对象   键值对  xxx:xxx用，分隔开。最后一个不用，因为有的浏览器会出错。包含在{}中。键必须是有效的变量名，如果无效，就用''来包括。访问这个属性时就不能用.来访问，用obj['xxx']来访问   属性名尽量使用标准的变量名，那样就可以obj.prop的形式进行访问属性   访问不存在的属性，返回undefined   js的对象是动态类型，可以对其增加或删除属性。增obj.name='abc'删delete obj.name   检测一个属性是否在这个对象中，用in操作符  例：'name' in obj
+
+条件判断   if    if..else  if else if  else   可以嵌套
+
+js把null undefined 0 '' NaN都视为false，其他值一概视为true
+
+循环  for循环  起始条件  判断条件   递增条件   常用于遍历数组      for..in循环  常用于遍历对象     break continue   for..in循环出来的都是string类型.   while只有判断条件   do..while先执行在进行判断，因此这种最少执行一次
+
+Map和Set	js默认对象是键值对形式  键必须是字符串   但其他数据类型也可以做键  ES6开发了这种方法    var m=new Map()  var s=new Set()
+var m=new Map([['hahaha',56],['hudh','yue']])  初始化Map需要一个二维数组，或者直接初始化一个空的Map   Map方法   set(xxx,xxx) get(xxx) delete(xxx) has(xxx)  一个key只能有一个value  重复设置会覆盖      var s=new Set([3,5,7,'sd',0])   Set是一组键的集合   键不能重复   方法add(xxx) delete(xxx)
+
+遍历Array可以使用下标 ，但Map和Set无法使用.因此，ES6引入了一种新的数据类型iterable ,Array Map Set都属于这种类型 属于iterable类型的集合可以使用for..of来遍历   for..in  for..of 再给数组加一个额外的属性时，用for..in遍历时可以会把额外加的属性也会遍历出来
+而for..of则不会它只遍历集合本身的元素，最好的遍历方法是用iterable的内置的forEach方法   forEach方法是ES5的方法   例
+var a=[3,'f',5];
+a.forEach(function(element,index,iterable){//element:当前元素本身  index:元素索引   iterable:当前集合   
+	
+});             Map:value key map   Set:key key set  Array:element index array
+js的函数调用不要求参数必须一致，因此可以省略参数  
