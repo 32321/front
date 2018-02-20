@@ -56,4 +56,9 @@ var a=[3,'f',5];
 a.forEach(function(element,index,iterable){//element:当前元素本身  index:元素索引   iterable:当前集合   
 	
 });             Map:value key map   Set:key key set  Array:element index array
-js的函数调用不要求参数必须一致，因此可以省略参数  
+js的函数调用不要求参数必须一致，因此可以省略参数 
+
+函数  代码有规律的重复时，注意使用函数。函数是抽象的，函数本身只需要写一次，就可以多次调用。函数的定义:function关键字 函数名  (xxx)参数 {xxx}函数体   执行函数体时，遇到return语句时,函数执行完毕。没有return,会返回undefined,,函数也是一个对象，函数名是指向函数的变量
+匿名函数，省略函数名，需要将匿名函数赋值给一个变量，或者作为一个参数，给变量赋值时需要在结束时加一个分号，以表示赋值的结束，，调用函数时，按顺序传入参数即可。。js允许向函数传递任意个参数而不影响调用，如传入的参数比需要的参数少时，返回时会返回NaN,因为未收到的参数是undefined。
+js有一个关键字arguments,只在函数内部起作用，指向函数调用者传入的所有参数，类似Array，但不是Array，常用于判断参数个数   arguments.length  arguments[i]          	ES6推出了一个参数rest用来接收多余的参数     sum(...rest)   sum(a,b,...rest)   sum()
+js引擎会在行末自动添加分号 《==  注意return语句的一个大坑 
