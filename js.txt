@@ -121,6 +121,40 @@ var a,b;
 一个函数需要一个对象的多个属性作为参数，可以把对象作为实参传递 
 使用解构赋值可以减少代码量，前提是浏览器支持ES6。
 
+在一个对象中绑定方法，称为这个对象的方法。 
+var person={
+	name:"xiaoming",
+	age:18,
+	eat:function{
+		console.log("i can eat");
+	}
+}
+绑定到对象上的函数叫做方法，和普通函数没什么区别，在一个方法内部，用到了this变量。这是一个特殊变量，它始终指向当前对象。
+注意this的指向。
+
+在一个独立的函数调用中，this指向的是window,但是我们可以控制this的指向，要是函数的this指向哪个对象，可以用函数本身的apply方法，它接受两个参数，第一个参数是需要绑定的this变量，第二个参数是Array，表示函数本身的参数。
+function getAge(){
+	console.log(this.age);
+}
+var person={
+	name:"xiaoming",
+	age:18,
+	get:getAge
+}
+person.get();//18
+getAge.apply(person,[]);//18
+另一个与apply()类似的方法是call(),区别是 apply是把函数本身的参数打包成Array在传入，call是把参数按顺序传入
+对普通函数调用，通常把this绑定为null
+
+装饰器  利用apply(),我们可以动态改变函数的行为  js的对象都是动态的，即使是内置的函数，我们也可以重新指向新的函数。例如
+当我们想计算一下parseInt被调用多少次。
+var oldParseInt=parseInt;
+var count=0;
+window.parseInt=function(){
+	count+=1;
+	return oldParseInt.apply(null,arguments);
+}
+console.log(parseInt("10")+parseInt("20")+parseInt("30")+" "+count);
 
 
 
