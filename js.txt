@@ -156,5 +156,10 @@ window.parseInt=function(){
 }
 console.log(parseInt("10")+parseInt("20")+parseInt("30")+" "+count);
 
+Array:创建数组  var arr=new Array()   var arr=[];   数组属性arr.length  遍历数组  arr.forEach(function(item,index,arr){})  添加元素到数组末尾arr.push(xxx)  删除数组末尾的元素arr.pop()   删除数组头部的元素arr.shift()  添加元素到数组的头部arr.unshift(xxx)
+找出某个元素在数组中的索引arr.indexOf(xxx)  从索引a开始删除数组b个元素arr.splice(a,b)   复制一个数组arr.slice()
+String: 得到字符串 var str=new String(xxx) var str=String(xxx) var str=xxx  从字符串中获取某个字符str.charAt(index)  从字符串提取一个新的子字符串str.slice(a,[b]) a是开始索引，b是结束索引(不包含b)   
+
+
 
 
